@@ -66,9 +66,9 @@ for (var i = 0; i<markers.length; i++){
             }
             var image = {
               url: marker_image,
-              size: new google.maps.Size(20, 20),
+              size: new google.maps.Size(30, 30),
               origin: new google.maps.Point(0, 0),
-              scaledSize: new google.maps.Size(20, 20)
+              scaledSize: new google.maps.Size(30, 30)
             };
             var point = new google.maps.LatLng(
                 parseFloat(markers[i].getAttribute("lat")),
