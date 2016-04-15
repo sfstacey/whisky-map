@@ -29,6 +29,8 @@ var customMapTypeId = 'whisky-style';
 var map = new google.maps.Map(document.getElementById('whisky-map'), {
   zoom:8,
   center:{lat:44.540, lng:-78.546},
+  mapTypeControl: false,
+  streetViewControl: false,
 });
 
 map.mapTypes.set(customMapTypeId, customMapType);
