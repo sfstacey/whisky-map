@@ -6,7 +6,7 @@
 requirejs.config({
     baseUrl: 'js/lib',
     paths: {
-        mapAPI:'https://maps.googleapis.com/maps/api/js?key=AIzaSyDIcXOw5toqC0QN78V1sWvYtRJbEel90Xg&sensor=false',
+        api:'https://maps.googleapis.com/maps/api/js?key=AIzaSyDIcXOw5toqC0QN78V1sWvYtRJbEel90Xg',
         app: '../app'
     }
 });
