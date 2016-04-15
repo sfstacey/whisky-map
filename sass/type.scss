@@ -1,0 +1,76 @@
+//TYPE
+@import 'compass/css3';
+@import 'compass/utilities';
+@import 'type-template.scss';
+
+%vertical-center {position: relative;
+                  top: 50%;
+                  @include transform(translateY(-50%));}
+
+%body-text, %headings {font-family:$montserrat;}
+%headings {text-transform:uppercase;
+          letter-spacing:3px;
+          @extend %t-regular;}
+
+$header-border-width:20px;
+$border-padding: 10px;
+
+%header-border {height:1px;
+          display:block;
+          background:$brown;
+        width:$header-border-width;}
+
+
+.main-calc {text-rendering: optimizeLegibility;
+
+section {@extend %body-text;
+
+              button.nextsection {color:white;
+                      @extend %headings;}
+
+              h2 {display:inline-block;
+                  background:$navy;
+                  padding:rhythm(0.5);
+                  text-align:center;
+                  position:relative;
+                  margin:0 auto;
+                  color:white;
+                  @extend %t-medium;
+                  @extend %headings;
+                  @include trailer;
+
+
+                  $border-positioning: -$header-border-width - $border-padding;
+
+                  &:before, &:after {content:'';
+                                    position:absolute;
+                                    @extend %header-border;
+                                    @extend %vertical-center;}
+
+                  &:before{left:$border-positioning;}
+                  &:after{right:$border-positioning;}
+                                  }
+
+                &#intro {
+                  p {color:$taupe;}
+                        }
+                &#gender {
+                  form.selectgender input[type="radio"] + label {color:$turquoise;
+                                                        clear:both;
+                                                      display:block;
+                                                    @extend %headings;}
+                  form.expecting {
+                        p, input[type="radio"] + label span {color:white;
+                            @extend %headings;}
+
+                          }
+              }
+              .selectbox {
+
+                    span, li.selected span {color:$turquoise;
+                          @extend %t-strong;}
+                  .options span {color:lighten($taupe, 10%);
+                                  @extend %t-regular;}
+}
+}
+}
