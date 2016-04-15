@@ -53,3 +53,7 @@ html {
     display: table; }
   .container:after {
     clear: both; }
+
+#whisky-map {
+  width: 800px;
+  height: 600px; }
