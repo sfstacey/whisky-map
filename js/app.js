@@ -6,6 +6,7 @@
 requirejs.config({
     baseUrl: 'js/lib',
     paths: {
+        maps: 'https://maps.googleapis.com/maps/api/js',
         app: '../app'
     }
 });
