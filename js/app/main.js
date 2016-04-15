@@ -35,27 +35,28 @@ var map = new google.maps.Map(document.getElementById('whisky-map'), {
 map.mapTypes.set(customMapTypeId, customMapType);
 map.setMapTypeId(customMapTypeId);
 
-var xmlURL = "xml/distilleries.xml";
-loadMarkers(xmlURL, map);
+xmlURL = "xml/distilleries.xml";
+loadMarkers(map);
 }
 
-function loadMarkers(xmlURL, map){
-var markers = [];
+function loadMarkers(map){
+require(['downloadXML'], function(){
+map.markers = map.markers || [];
 downloadUrl(xmlURL, function(data){
-//var xml = data.reponseXML;
+var xml = xmlParse(data);
 var markers = xml.documentElement.getElementsByTagName('marker');
 
 for (var i = 0; i<markers.length; i++){
-            var name=markers[i].getAtrribute('name');
+            var name = markers[i].getAttribute('name');
             var marker_image = markers[i].getAttribute('markerimage');
             var id = markers[i].getAttribute("id");
             var address = markers[i].getAttribute("address1")+"<br />"+markers[i].getAttribute("address2")+"<br />"+markers[i].getAttribute("address3")+"<br />"+markers[i].getAttribute("postcode");
-            var image = {
+            /*var image = {
               url: marker_image,
               size: new google.maps.Size(71, 132),
               origin: new google.maps.Point(0, 0),
               scaledSize: new google.maps.Size(71, 132)
-            };
+            };*/
             var point = new google.maps.LatLng(
                 parseFloat(markers[i].getAttribute("lat")),
                 parseFloat(markers[i].getAttribute("lng")));
@@ -63,13 +64,14 @@ for (var i = 0; i<markers.length; i++){
             var marker = new google.maps.Marker({
               map: map,
               position: point,
-              icon: image,
+              //icon: image,
               title: name
             });
             map.markers.push(marker);
-            bindInfoWindow(marker, map, infoWindow, html);
+            //bindInfoWindow(marker, map, infoWindow, html);
         }
     });
+  });
 };
 
 function downloadUrl(url,callback) {
