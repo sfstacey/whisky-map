@@ -48,23 +48,36 @@ var markers = xml.documentElement.getElementsByTagName('marker');
 
 for (var i = 0; i<markers.length; i++){
             var name = markers[i].getAttribute('name');
-            var marker_image = markers[i].getAttribute('markerimage');
+            var category = markers[i].getAttribute('category');
             var id = markers[i].getAttribute("id");
-            var address = markers[i].getAttribute("address1")+"<br />"+markers[i].getAttribute("address2")+"<br />"+markers[i].getAttribute("address3")+"<br />"+markers[i].getAttribute("postcode");
-            /*var image = {
+            switch(category){
+              case 'malt':
+              var marker_image = "img/icons/malt.png";
+              break;
+              case 'grain':
+              var marker_image = "img/icons/grain.png";
+              break;
+              case 'pot_still':
+              var marker_image = "img/icons/pot_still.png";
+              break;
+              case 'coffey_still':
+              var marker_image = "img/icons/coffey_still.png";
+              break;
+            }
+            var image = {
               url: marker_image,
-              size: new google.maps.Size(71, 132),
+              size: new google.maps.Size(20, 20),
               origin: new google.maps.Point(0, 0),
-              scaledSize: new google.maps.Size(71, 132)
-            };*/
+              scaledSize: new google.maps.Size(20, 20)
+            };
             var point = new google.maps.LatLng(
                 parseFloat(markers[i].getAttribute("lat")),
                 parseFloat(markers[i].getAttribute("lng")));
-            var html = "<div class='infowindow'><b>" + name + "</b> <br/>" + address+'<br/></div>';
+            //var html = "<div class='infowindow'><b>" + name + "</b> <br/>" + address+'<br/></div>';
             var marker = new google.maps.Marker({
               map: map,
               position: point,
-              //icon: image,
+              icon: image,
               title: name
             });
             map.markers.push(marker);
