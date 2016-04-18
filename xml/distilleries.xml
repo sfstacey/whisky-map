@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <markers>
-    <marker id="1" name="Arsenal" category="malt" lat="51.5560928" lng="-0.1053014" />
-    <marker id="2" name="Aston Villa" category="grain" lat="52.5087462" lng="-1.8854229" />
-    <marker id="3" name="Cardiff City" category="pot_still" lat="51.4725065" lng="-3.2047995" />
-    <marker id="4" name="Chelsea FC" category="coffey_still" lat="51.4807263" lng="-0.1906128" />
-    <marker id="5" name="Crystal Palace" category="malt" lat="51.3977037" lng="-0.0854231" />
+    <marker id="1" name="La Alazana" category="malt" lat="-42.006471" lng="-71.528228" founded="2001"/>
+    <marker id="2" name="Bakery Hill" category="malt" lat="-37.81977" lng="145.297235" founded="2000"/>
+    <marker id="3" name="Black Gate" category="malt" lat="-31.833324" lng="149.11621" founded="2012"/>
+    <marker id="4" name="Booie Range" category="malt" lat="-26.50716" lng="151.881639" founded="2001" />
+    <marker id="5" name="Corio" category="grain" lat="-38.146967" lng="144.361078" founded="1929"/>
+    <marker id="6" name="Corio" category="malt" lat="-38.146967" lng="144.361078" founded="1929"/>
+    <marker id="7" name="Fanny's Bay" category="malt" lat="-40.997839" lng="147.098028" founded="2015"/>
+    <marker id="8" name="Great Southern" category="malt" lat="-35.041114" lng="117.84837" founded="2004"/>
+    <marker id="9" name="Hellyer's Road" category="malt" lat="-41.088612" lng="145.909283" founded="1999"/>
+    <marker id="10" name="Joadja" category="malt" lat="-34.24153" lng="150.13403" founded="2014"/>
+    <marker id="11" name="Lark" category="malt" lat="-42.883118" lng="147.331556" founded="1992"/>
+    <marker id="12" name="Loch Distillery" category="malt" lat="-38.369202" lng="145.707512" founded="2015"/>
+    <!--<marker id="13" name="Mackey's" category="malt" lat="" lng="" founded="2007"/>-->
+    <marker id="14" name="Margaret River Distilling Company" category="malt" lat="-33.942191" lng="115.073335" founded="2015"/>
+    <marker id="15" name="Mt Uncle" category="malt" lat="-17.110955" lng="145.414059" founded="2002"/>
+    <marker id="16" name="Nant" category="malt" lat="-42.354934" lng="147.017442" founded="2004"/>
 </markers>
