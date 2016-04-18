@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <markers>
-    <marker id="1" name="Arsenal" category="malt" lat="51.5560928" lng="-0.1053014" />
-    <marker id="2" name="Aston Villa" category="grain" lat="52.5087462" lng="-1.8854229" />
-    <marker id="3" name="Cardiff City" category="pot_still" lat="51.4725065" lng="-3.2047995" />
-    <marker id="4" name="Chelsea FC" category="coffey_still" lat="51.4807263" lng="-0.1906128" />
-    <marker id="5" name="Crystal Palace" category="malt" lat="51.3977037" lng="-0.0854231" />
+    <marker id="1" name="La Alazana" category="malt" lat="-42.006471" lng="-71.528228" />
+    <marker id="2" name="Bakery Hill" category="malt" lat="-37.81977" lng="145.297235" />
+    <marker id="3" name="Black Gate" category="malt" lat="-31.833324" lng="149.11621" />
+    <marker id="4" name="Booie Range" category="malt" lat="-26.50716" lng="151.881639" />
+    <marker id="5" name="Corio" category="malt" lat="-38.146967" lng="144.361078" />
 </markers>
