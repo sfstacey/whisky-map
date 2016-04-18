@@ -7,6 +7,7 @@ initMap();
 });
 });
 
+
 function initMap(){
 
 var customMapType = new google.maps.StyledMapType([
@@ -27,7 +28,7 @@ var customMapType = new google.maps.StyledMapType([
           ]);
 var customMapTypeId = 'whisky-style';
 var map = new google.maps.Map(document.getElementById('whisky-map'), {
-  zoom:8,
+  zoom:2,
   center:{lat:44.540, lng:-78.546},
   mapTypeControl: false,
   streetViewControl: false,
@@ -40,16 +41,26 @@ loadMarkers(map);
 }
 
 function loadMarkers(map){
+
 require(['downloadXML'], function(){
 map.markers = map.markers || [];
 downloadUrl(xmlURL, function(data){
 var xml = xmlParse(data);
 var markers = xml.documentElement.getElementsByTagName('marker');
 
+//create and open infowindow
+var infowindow = new google.maps.InfoWindow();
+
 for (var i = 0; i<markers.length; i++){
-            var name = markers[i].getAttribute('name');
-            var category = markers[i].getAttribute('category');
-            var id = markers[i].getAttribute("id");
+            var data = markers[i];
+            var name = data.getAttribute('name');
+            var category = data.getAttribute('category');
+            var id = data.getAttribute("id");
+            var point = new google.maps.LatLng(
+                parseFloat(data.getAttribute("lat")),
+                parseFloat(data.getAttribute("lng"))
+              );
+              /*
             switch(category){
               case 'malt':
               var marker_image = "img/icons/malt.png";
@@ -63,29 +74,31 @@ for (var i = 0; i<markers.length; i++){
               case 'coffey_still':
               var marker_image = "img/icons/coffey_still.png";
               break;
-            }
+            }*/
             var image = {
-              url: marker_image,
-              size: new google.maps.Size(30, 30),
+              url: "img/icons/"+category+".png",
+              size: new google.maps.Size(35, 35),
               origin: new google.maps.Point(0, 0),
-              scaledSize: new google.maps.Size(30, 30)
+              scaledSize: new google.maps.Size(35, 35)
             };
-            var point = new google.maps.LatLng(
-                parseFloat(markers[i].getAttribute("lat")),
-                parseFloat(markers[i].getAttribute("lng")));
-            //var html = "<div class='infowindow'><b>" + name + "</b> <br/>" + address+'<br/></div>';
             var marker = new google.maps.Marker({
               map: map,
               position: point,
               icon: image,
               title: name
             });
+            (function(marker,data){
+              google.maps.event.addListener(marker,'click',function(e){
+                //wrap the content inside an HTML DIV in order to set height and width of infoWindow
+                infowindow.setContent('<div class="infowindow"><div class="infowindow_body"><h2>'+marker.title+'</h2></div></div>');
+                infowindow.open(map, marker);
+              })
+            })(marker, data)
             map.markers.push(marker);
-            //bindInfoWindow(marker, map, infoWindow, html);
-        }
-    });
-  });
-};
+          }
+        });
+        });
+      };
 
 function downloadUrl(url,callback) {
     var request = window.ActiveXObject ?

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <markers>
-    <marker id="1" name="La Alazana" category="malt" lat="-42.006471" lng="-71.528228" />
-    <marker id="2" name="Bakery Hill" category="malt" lat="-37.81977" lng="145.297235" />
+    <marker id="1" name="La Alazana" category="malt" lat="-42.006471" lng="-71.528228"/>
+    <marker id="2" name="Bakery Hill" category="malt" lat="-37.81977" lng="145.297235"/>
     <marker id="3" name="Black Gate" category="malt" lat="-31.833324" lng="149.11621" />
     <marker id="4" name="Booie Range" category="malt" lat="-26.50716" lng="151.881639" />
-    <marker id="5" name="Corio" category="malt" lat="-38.146967" lng="144.361078" />
+    <marker id="5" name="Corio" category="grain" lat="-38.146967" lng="144.361078" />
+    <marker id="6" name="Corio" category="malt" lat="-38.146967" lng="144.361078" />
+    <marker id="7" name="Fanny's Bay" category="malt" lat="-40.997839" lng="147.098028" />
+    <marker id="8" name="Great Southern" category="malt" lat="-35.041114" lng="117.84837" />
+    <marker id="9" name="Hellyer's Road" category="malt" lat="-41.088612" lng="145.909283" />
+    <marker id="10" name="Joadja" category="malt" lat="-34.24153" lng="150.13403" />
 </markers>
