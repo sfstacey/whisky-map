@@ -54,6 +54,45 @@ html {
   .container:after {
     clear: both; }
 
+.fullscreen {
+  display: block;
+  width: 100vw;
+  width: 100%;
+  height: 100vh;
+  padding: 2em;
+  position: relative; }
+
 #whisky-map {
-  width: 800px;
-  height: 600px; }
+  display: block;
+  position: relative;
+  width: 100vw;
+  width: 100%;
+  min-width: 800px;
+  height: 700px;
+  background: #eeb577; }
+
+.timeline {
+  margin-top: 2em; }
+  .timeline .timeline_bar {
+    height: 4em;
+    display: block;
+    position: relative;
+    background: #1a1a1a; }
+  .timeline .timeline_slider {
+    background: #eeb577;
+    width: 10px;
+    position: absolute;
+    display: block;
+    height: 100%;
+    z-index: 10; }
+  .timeline ul.timeline_years {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+    color: white; }
+    .timeline ul.timeline_years li {
+      flex: 1;
+      border-left: 1px solid white; }

@@ -1,9 +1,12 @@
+require(['jquery'], function(){
 $(document).ready(function(){
 
 console.log('START:main.js');
 
 require(['api'], function(){
 initMap();
+activateTimeline();
+});
 });
 });
 
@@ -29,7 +32,7 @@ var customMapType = new google.maps.StyledMapType([
 var customMapTypeId = 'whisky-style';
 var map = new google.maps.Map(document.getElementById('whisky-map'), {
   zoom:2,
-  center:{lat:44.540, lng:-78.546},
+  center:{lat:51.507351, lng:-0.127758},
   mapTypeControl: false,
   streetViewControl: false,
 });
@@ -60,21 +63,6 @@ for (var i = 0; i<markers.length; i++){
                 parseFloat(data.getAttribute("lat")),
                 parseFloat(data.getAttribute("lng"))
               );
-              /*
-            switch(category){
-              case 'malt':
-              var marker_image = "img/icons/malt.png";
-              break;
-              case 'grain':
-              var marker_image = "img/icons/grain.png";
-              break;
-              case 'pot_still':
-              var marker_image = "img/icons/pot_still.png";
-              break;
-              case 'coffey_still':
-              var marker_image = "img/icons/coffey_still.png";
-              break;
-            }*/
             var image = {
               url: "img/icons/"+category+".png",
               size: new google.maps.Size(35, 35),
@@ -100,18 +88,11 @@ for (var i = 0; i<markers.length; i++){
         });
       };
 
-function downloadUrl(url,callback) {
-    var request = window.ActiveXObject ?
-         new ActiveXObject('Microsoft.XMLHTTP') :
-         new XMLHttpRequest;
-
-    request.onreadystatechange = function() {
-        if (request.readyState == 4) {
-            //request.onreadystatechange = doNothing;
-            callback(request, request.status);
-        }
-    };
-
-    request.open('GET', url, true);
-    request.send(null);
+function activateTimeline(){
+require(['jqueryui'], function(){
+  //get the years of each distillery
+  //if the marker matches the current slider position, add the marker
+  //if the marker has closed, remove the markers.
+$('.timeline_slider').draggable({ axis: "x", containment:'parent'});
+});
 }
